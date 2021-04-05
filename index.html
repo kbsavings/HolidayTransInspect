@@ -1,0 +1,50 @@
+<html>
+<body>
+
+<script type = "text/javascript">
+  var idxIT = 0;
+  var idxMT = 0;
+  var listIT = ["김민준", "권호철", "김주호", "김민승", "박준영", "김주현"];
+  var listMT = ["김원국", "서호현", "김세준", "김석환", "홍석주"];
+  
+  let sBadDay = new Date('2021-04-01');
+  let sToday = new Date();
+  
+  while(getDateNum(sBadDay)<=20211231){
+    
+    if(sBadDay.getDay()== 0 || sBadDay.getDay()== 6 || isHday(sBadDay)) {
+      document.write('<font');
+      if(getDateNum(sBadDay) < getDateNum(sToday)) document.write(' color="lightgrey"');
+      document.write('>' + getDateNum(sBadDay) + ' : ' );
+      document.write('인뱅[' + listIT[idxIT] + '], 모뱅[' + listMT[idxMT] + ']</font></br>' );
+      
+      idxIT++;
+      if(listIT.length == idxIT) idxIT = 0;
+      idxMT++;
+      if(listMT.length == idxMT) idxMT = 0;
+    }
+    
+    sBadDay.setDate(sBadDay.getDate() + 1);
+  }
+  
+  function getDateNum(date) {
+    var sYear = date.getFullYear();
+    var sMonth = date.getMonth() + 1;
+    var sDate = date.getDate();
+
+    sMonth = sMonth > 9 ? sMonth : "0" + sMonth;
+    sDate  = sDate > 9 ? sDate : "0" + sDate;
+    return ("" + sYear + sMonth + sDate)*1;
+  }
+  
+  function isHday(date) {
+    var arrHdays = [20210519, 20210606, 20210815, 20210920, 20210921, 20210922, 20210505, 20211003, 20211009, 20211225];
+    for (index in arrHdays) if(getDateNum(date) == arrHdays[index]) return true;
+  }
+
+</script>
+
+
+</body>
+</html>
+
