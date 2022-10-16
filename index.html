@@ -1,5 +1,6 @@
 <html>
 <body>
+  <title>[KB저축은행]주말거래점검</title>
 
 <script type = "text/javascript">
   var idxIT = 0;
@@ -25,7 +26,7 @@
   
   let sBadDay = new Date('2022-01-01');
   let sToday = new Date();
-  
+  document.write('<h1>[KB저축은행]주말거래점검</h1>');
   while(getDateNum(sBadDay)<=20221231){
     
     if(sBadDay.getDay()== 0 || sBadDay.getDay()== 6 || isHday(sBadDay)) {
@@ -88,6 +89,10 @@
     
     sBadDay.setDate(sBadDay.getDate() + 1);
   }
+    document.write('<h2>주말거래점검 항목</h2>');
+    document.write('<h3>공통 : 로그인, 당타행이체, 통합한도조회, 포인트리 전환, 어카운트인포, ARS</h3>');
+    document.write('<h3>모바일뱅킹 : 오픈뱅킹(조회,가져오기) 등</h3>');
+    document.write('<h3>인터넷뱅킹 : OTP 등</h3>');
   
   function getDateNum(date) {
     var sYear = date.getFullYear();
