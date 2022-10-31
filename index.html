@@ -13,6 +13,8 @@
   var idxMT4 = 0;
   var idxIT5 = 0;
   var idxMT5 = 0;
+  var idxIT6 = 0;
+  var idxMT6 = 0;
   var listIT =  ["김민준", "권호철", "김주호", "김민승", "박준영", "김주현"];
   var listMT =  ["김원국", "서호현", "김세준", "김석환", "홍석주"         ];
   var listIT2 = ["김주호", "김민승", "박준영", "김주현", "심지은", "권호철"];
@@ -23,6 +25,8 @@
   var listMT4 = ["김민승", "홍석주", "서호현", "김민준", "김병문"         ];
   var listIT5 = ["박한모", "신길준", "유홍재", "이수연", "장성영", "김주호"];
   var listMT5 = ["김병문", "서호현", "김민준", "심지은", "권호철", "김민승"];
+  var listIT6 = ["박한모", "신길준", "유홍재", "이수연", "장성영", "김주호", "이현경", "한창효"];
+  var listMT6 = ["김병문", "서호현", "김민준", "심지은", "권호철", "김민승"];
   
   let sBadDay = new Date('2022-01-01');
   let sToday = new Date();
@@ -74,7 +78,7 @@
         idxMT4++;
         if(listMT4.length == idxMT4) idxMT4 = 0;
         
-      } else {
+      } else if(getDateNum(sBadDay) < getDateNum(new Date('2022-11-21'))) {
       
         document.write('>' + getDateNum(sBadDay) + ' : ' );
         document.write('인뱅[' + listIT5[idxIT5] + '], 모뱅[' + listMT5[idxMT5] + ']</font></br>' );
@@ -84,11 +88,22 @@
         idxMT5++;
         if(listMT5.length == idxMT5) idxMT5 = 0;
         
+      } else {
+      
+        document.write('>' + getDateNum(sBadDay) + ' : ' );
+        document.write('인뱅[' + listIT6[idxIT6] + '], 모뱅[' + listMT6[idxMT6] + ']</font></br>' );
+        
+        idxIT6++;
+        if(listIT6.length == idxIT6) idxIT6 = 0;
+        idxMT6++;
+        if(listMT6.length == idxMT6) idxMT6 = 0;
+        
       }
     }
     
     sBadDay.setDate(sBadDay.getDate() + 1);
   }
+
     document.write('<h2>주말거래점검 항목</h2>');
     document.write('<h3>공통 : 로그인, 당타행이체, 통합한도조회, 포인트리 전환, 어카운트인포, ARS</h3>');
     document.write('<h3>모바일뱅킹 : 오픈뱅킹(조회,가져오기) 등</h3>');
