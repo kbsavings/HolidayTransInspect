@@ -3,34 +3,43 @@
   <title>[KB저축은행]주말거래점검</title>
 
 <script type = "text/javascript">
-  var idxIT = 0;
-  var idxMT = 0;
-  var idxIT2 = 0;
-  var idxMT2 = 0;
-  var idxIT3 = 0;
-  var idxMT3 = 0;
-  var idxIT4 = 0;
-  var idxMT4 = 0;
-  var idxIT5 = 0;
-  var idxMT5 = 0;
-  var idxIT6 = 0;
-  var idxMT6 = 0;
-  var listIT =  ["김민준", "권호철", "김주호", "김민승", "박준영", "김주현"];
-  var listMT =  ["김원국", "서호현", "김세준", "김석환", "홍석주"         ];
-  var listIT2 = ["김주호", "김민승", "박준영", "김주현", "심지은", "권호철"];
-  var listMT2 = ["김세준", "김석환", "홍석주", "김원국", "김민준", "서호현"];
-  var listIT3 = ["김주현", "심지은", "권호철", "장성영", "김주호", "김민승", "박준영"];
-  var listMT3 = ["김민준", "서호현", "김병문", "김세준", "김석환", "홍석주"];
-  var listIT4 = ["장성영", "박한모", "김주호", "유홍재", "심지은", "권호철"];
-  var listMT4 = ["김민승", "홍석주", "서호현", "김민준", "김병문"         ];
-  var listIT5 = ["박한모", "신길준", "유홍재", "이수연", "장성영", "김주호"];
-  var listMT5 = ["김병문", "서호현", "김민준", "심지은", "권호철", "김민승"];
-  var listIT6 = ["이현경", "한창효", "유홍재", "이수연", "박한모", "신길준", "장성영", "김주호"];
-  var listMT6 = ["김병문", "서호현", "김민준", "심지은", "권호철", "김민승"];
+  var idxIT_22_1 = 0;
+  var idxMT_22_1 = 0;
+  var idxIT_22_2 = 0;
+  var idxMT_22_2 = 0;
+  var idxIT_22_3 = 0;
+  var idxMT_22_3 = 0;
+  var idxIT_22_4 = 0;
+  var idxMT_22_4 = 0;
+  var idxIT_22_5 = 0;
+  var idxMT_22_5 = 0;
+  var idxIT_22_6 = 0;
+  var idxMT_22_6 = 0;
+
+  var idxIT_23_1 = 0;
+  var idxMT_23_1 = 0;
+
+  var listIT_22_1 =  ["김민준", "권호철", "김주호", "김민승", "박준영", "김주현"];
+  var listMT_22_1 =  ["김원국", "서호현", "김세준", "김석환", "홍석주"         ];
+  var listIT_22_2 = ["김주호", "김민승", "박준영", "김주현", "심지은", "권호철"];
+  var listMT_22_2 = ["김세준", "김석환", "홍석주", "김원국", "김민준", "서호현"];
+  var listIT_22_3 = ["김주현", "심지은", "권호철", "장성영", "김주호", "김민승", "박준영"];
+  var listMT_22_3 = ["김민준", "서호현", "김병문", "김세준", "김석환", "홍석주"];
+  var listIT_22_4 = ["장성영", "박한모", "김주호", "유홍재", "심지은", "권호철"];
+  var listMT_22_4 = ["김민승", "홍석주", "서호현", "김민준", "김병문"         ];
+  var listIT_22_5 = ["박한모", "신길준", "유홍재", "이수연", "장성영", "김주호"];
+  var listMT_22_5 = ["김병문", "서호현", "김민준", "심지은", "권호철", "김민승"];
+  var listIT_22_6 = ["이현경", "한창효", "유홍재", "이수연", "박한모", "신길준", "장성영", "김주호"];
+  var listMT_22_6 = ["김병문", "서호현", "김민준", "심지은", "권호철", "김민승"];
+
+  var listIT_23_1 = ["이수연", "박한모", "신길준", "장성영", "김주호", "이현경", "한창효", "유홍재"];
+  var listMT_23_1 = ["김민승", "김병문", "서호현", "김민준", "심지은", "권호철"];
   
-  let sBadDay = new Date('2022-01-01');
+  let sBadDay;
   let sToday = new Date();
   document.write('<h1>[KB저축은행]주말거래점검</h1>');
+  if(getDateNum(sToday) < 20230101){///////////////////////////////////////////////////////////////////////////////////22년도
+    sBadDay = new Date('2022-01-01');
   while(getDateNum(sBadDay)<=20221231){
     
     if(sBadDay.getDay()== 0 || sBadDay.getDay()== 6 || isHday(sBadDay)) {
@@ -41,68 +50,93 @@
       if(getDateNum(sBadDay) < getDateNum(new Date('2021-07-26'))) {
       
         document.write('>' + getDateNum(sBadDay) + ' : ' );
-        document.write('인뱅[' + listIT[idxIT] + '], 모뱅[' + listMT[idxMT] + ']</font></br>' );
+        document.write('인뱅[' + listIT_22_1[idxIT_22_1] + '], 모뱅[' + listMT_22_1[idxMT_22_1] + ']</font></br>' );
       
-        idxIT++;
-        if(listIT.length == idxIT) idxIT = 0;
-        idxMT++;
-        if(listMT.length == idxMT) idxMT = 0;
+        idxIT_22_1++;
+        if(listIT_22_1.length == idxIT_22_1) idxIT_22_ = 0;
+        idxMT_22_1++;
+        if(listMT_22_1.length == idxMT_22_1) idxMT_22_ = 0;
         
       } else if(getDateNum(sBadDay) < getDateNum(new Date('2022-05-15'))) {
       
         document.write('>' + getDateNum(sBadDay) + ' : ' );
-        document.write('인뱅[' + listIT2[idxIT2] + '], 모뱅[' + listMT2[idxMT2] + ']</font></br>' );
+        document.write('인뱅[' + listIT_22_2[idxIT_22_2] + '], 모뱅[' + listMT_22_2[idxMT_22_2] + ']</font></br>' );
       
-        idxIT2++;
-        if(listIT2.length == idxIT2) idxIT2 = 0;
-        idxMT2++;
-        if(listMT2.length == idxMT2) idxMT2 = 0;
+        idxIT_22_2++;
+        if(listIT_22_2.length == idxIT_22_2) idxIT_22_2 = 0;
+        idxMT_22_2++;
+        if(listMT_22_2.length == idxMT_22_2) idxMT_22_2 = 0;
       
       } else if(getDateNum(sBadDay) < getDateNum(new Date('2022-08-22'))) {
       
         document.write('>' + getDateNum(sBadDay) + ' : ' );
-        document.write('인뱅[' + listIT3[idxIT3] + '], 모뱅[' + listMT3[idxMT3] + ']</font></br>' );
+        document.write('인뱅[' + listIT_22_3[idxIT_22_3] + '], 모뱅[' + listMT_22_3[idxMT_22_3] + ']</font></br>' );
         
-        idxIT3++;
-        if(listIT3.length == idxIT3) idxIT3 = 0;
-        idxMT3++;
-        if(listMT3.length == idxMT3) idxMT3 = 0;
+        idxIT_22_3++;
+        if(listIT_22_3.length == idxIT_22_3) idxIT_22_3 = 0;
+        idxMT_22_3++;
+        if(listMT_22_3.length == idxMT_22_3) idxMT_22_3 = 0;
         
       } else if(getDateNum(sBadDay) < getDateNum(new Date('2022-11-01'))) {
       
         document.write('>' + getDateNum(sBadDay) + ' : ' );
-        document.write('인뱅[' + listIT4[idxIT4] + '], 모뱅[' + listMT4[idxMT4] + ']</font></br>' );
+        document.write('인뱅[' + listIT_22_4[idxIT_22_4] + '], 모뱅[' + listMT_22_4[idxMT_22_4] + ']</font></br>' );
         
-        idxIT4++;
-        if(listIT4.length == idxIT4) idxIT4 = 0;
-        idxMT4++;
-        if(listMT4.length == idxMT4) idxMT4 = 0;
+        idxIT_22_4++;
+        if(listIT_22_4.length == idxIT_22_4) idxIT_22_4 = 0;
+        idxMT_22_4++;
+        if(listMT_22_4.length == idxMT_22_4) idxMT_22_4 = 0;
         
       } else if(getDateNum(sBadDay) < getDateNum(new Date('2022-11-21'))) {
       
         document.write('>' + getDateNum(sBadDay) + ' : ' );
-        document.write('인뱅[' + listIT5[idxIT5] + '], 모뱅[' + listMT5[idxMT5] + ']</font></br>' );
+        document.write('인뱅[' + listIT_22_5[idxIT_22_5] + '], 모뱅[' + listMT_22_5[idxMT_22_5] + ']</font></br>' );
         
-        idxIT5++;
-        if(listIT5.length == idxIT5) idxIT5 = 0;
-        idxMT5++;
-        if(listMT5.length == idxMT5) idxMT5 = 0;
+        idxIT_22_5++;
+        if(listIT_22_5.length == idxIT_22_5) idxIT_22_5 = 0;
+        idxMT_22_5++;
+        if(listMT_22_5.length == idxMT_22_5) idxMT_22_5 = 0;
         
       } else {
       
         document.write('>' + getDateNum(sBadDay) + ' : ' );
-        document.write('인뱅[' + listIT6[idxIT6] + '], 모뱅[' + listMT6[idxMT6] + ']</font></br>' );
+        document.write('인뱅[' + listIT_22_6[idxIT_22_6] + '], 모뱅[' + listMT_22_6[idxMT_22_6] + ']</font></br>' );
         
-        idxIT6++;
-        if(listIT6.length == idxIT6) idxIT6 = 0;
-        idxMT6++;
-        if(listMT6.length == idxMT6) idxMT6 = 0;
+        idxIT_22_6++;
+        if(listIT_22_6.length == idxIT_22_6) idxIT_22_6 = 0;
+        idxMT_22_6++;
+        if(listMT_22_6.length == idxMT_22_6) idxMT_22_6 = 0;
         
       }
     }
     
     sBadDay.setDate(sBadDay.getDate() + 1);
   }
+} else if(getDateNum(sToday) >= 20230101 && getDateNum(sToday) < 20240101) {  ///////////////////////////////////////////////////////////////////////////////////23년도
+  sBadDay = new Date('2023-01-01');
+
+  while(getDateNum(sBadDay)<=20231231){
+    
+    if(sBadDay.getDay()== 0 || sBadDay.getDay()== 6 || isHday(sBadDay)) {
+      document.write('<font');
+      
+      if(getDateNum(sBadDay) < getDateNum(sToday)) document.write(' color="lightgrey"');
+      
+      
+        document.write('>' + getDateNum(sBadDay) + ' : ' );
+        document.write('인뱅[' + listIT_23_1[idxIT_23_1] + '], 모뱅[' + listMT_23_1[idxMT_23_1] + ']</font></br>' );
+      
+        idxIT_23_1++;
+        if(listIT_23_1.length == idxIT_23_1) idxIT_23_1 = 0;
+        idxMT_23_1++;
+        if(listMT_23_1.length == idxMT_23_1) idxMT_23_1 = 0;
+        
+       
+    }
+    
+    sBadDay.setDate(sBadDay.getDate() + 1);
+  }
+}
 
     document.write('<h2>주말거래점검 항목</h2>');
     document.write('<h3>공통 : 로그인, 당타행이체, 통합한도조회, 포인트리 전환, 어카운트인포, ARS</h3>');
@@ -152,6 +186,16 @@
                   , 20221009
                   , 20221010
                   , 20221225
+                  , 20230123
+                  , 20230124
+                  , 20230505
+                  , 20230606
+                  , 20230815
+                  , 20230928
+                  , 20230929
+                  , 20231003
+                  , 20231009
+                  , 20231225
                    ];
     for (index in arrHdays) if(getDateNum(date) == arrHdays[index]) return true;
   }
